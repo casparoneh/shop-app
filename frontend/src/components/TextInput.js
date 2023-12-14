@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Field, ErrorMessage } from "formik";
 import TextErorr from "./TextError";
 
-const TextInput = ({ name, placeholder }) => {
+const TextInput = ({ name, placeholder,type }) => {
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null);
 
@@ -30,7 +30,7 @@ const TextInput = ({ name, placeholder }) => {
               <input
                 {...field}
                 ref={inputRef}
-                type="text"
+                type={type == "password" ? "password" : "text"}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 className={`cursor-pointer border-2 ${
