@@ -3,7 +3,7 @@ const Button = ({
   onClick,
   bg = "bg-black",
   text = "text-white",
-  width = "",
+  width = "w-full",
   type,
 }) => {
   return (
