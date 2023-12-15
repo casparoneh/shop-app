@@ -5,7 +5,7 @@ import ShopContainer from "@/components/Shop/ShopContainer"
 
 const Shop = () => {
   return (
-    <div className="">
+    <div className="w-full">
         <ShopBanner />
 
         <ShopContainer />

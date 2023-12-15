@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.range-slider__range {
+    background-color: black !important;
+}
+
+.range-slider__thumb {
+    background-color: white !important;
+    border: 3px solid black;
+}

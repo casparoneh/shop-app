@@ -7,7 +7,7 @@ const ShopBanner = () => {
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <h1 className="text-white text-4xl font-bold">SHOP</h1>
 
-        <div className="flex gap-12 mt-8 text-white font-bold">
+        <div className="flex flex-wrap justify-center gap-12 mt-8 text-white font-bold">
           <Link href="">JEANS</Link>
           <Link href="">MEN</Link>
           <Link href="">WOMEN</Link>
