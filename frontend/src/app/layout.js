@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div>{children}</div>
+        <div  className="px-4 md:px-0 ">{children}</div>
         <Footer />
       </body>
     </html>
