@@ -6,7 +6,7 @@ const SingleItem = () => {
 
   return (
     <div
-      className=" w-72 bg-gray-100 px-4 rounded-md cursor-pointer"
+      className=" w-80 bg-gray-100 px-4 rounded-md cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
