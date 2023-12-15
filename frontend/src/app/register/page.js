@@ -41,7 +41,7 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto flex flex-col items-center  h-screen  justify-center">
+    <div className="max-w-lg mx-auto flex flex-col items-center  h-screen  justify-center px-4">
       <h1 className="font-black text-2xl">REGISTER</h1>
       <div className="w-full">
         <Formik
@@ -66,7 +66,7 @@ const Login = () => {
                   placeholder="Confirm Password"
                   type="password"
                 />
-                <Button title="Login" type="submit" />
+                <Button title="Register" type="submit" />
               </Form>
             );
           }}
