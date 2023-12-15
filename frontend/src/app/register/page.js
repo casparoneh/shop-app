@@ -1,7 +1,7 @@
 "use client";
 
-import Button from "@/components/Button";
-import TextInput from "@/components/TextInput";
+import Button from "@/components/utils/Button";
+import TextInput from "@/components/utils/TextInput";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 

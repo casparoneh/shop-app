@@ -1,8 +1,8 @@
 "use client";
 
-import Button from "@/components/Button";
-import TextInput from "@/components/TextInput";
-import Title from "@/components/Title";
+import Button from "@/components/utils/Button";
+import TextInput from "@/components/utils/TextInput";
+import Title from "@/components/utils/Title";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 
@@ -37,24 +37,30 @@ const Contact = () => {
 
       <div className="flex justify-between my-12">
         <div>
-           <h1 className="font-bold text-xl">STORE IN EUROPE</h1>
-           
-           <p className="text-sm my-4 max-w-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt repellendus dignissimos laboriosam.</p>
+          <h1 className="font-bold text-xl">STORE IN EUROPE</h1>
 
-           <div>
+          <p className="text-sm my-4 max-w-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            repellendus dignissimos laboriosam.
+          </p>
+
+          <div>
             <p className="font-bold">saleapp@hotmail.com</p>
             <p className="font-bold">+123 1234 1233</p>
-           </div>
+          </div>
         </div>
         <div>
-           <h1 className="font-bold text-xl">STORE IN USA</h1>
-           
-           <p className="text-sm my-4 max-w-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt repellendus dignissimos laboriosam.</p>
+          <h1 className="font-bold text-xl">STORE IN USA</h1>
 
-           <div>
+          <p className="text-sm my-4 max-w-sm">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
+            repellendus dignissimos laboriosam.
+          </p>
+
+          <div>
             <p className="font-bold">saleapp@hotmail.com</p>
             <p className="font-bold">+123 1234 1233</p>
-           </div>
+          </div>
         </div>
       </div>
 
@@ -67,15 +73,13 @@ const Contact = () => {
           onSubmit={onSubmit}
           enableReinitialize
         >
-     
-              <Form className="w-full">
-                <TextInput name="email" placeholder="Email" />
-                <TextInput name="name" placeholder="Name" />
-                <TextInput name="message" placeholder="Message" textareaInput />
-             
-                <Button title="Register" type="submit" />
-              </Form>
-      
+          <Form className="w-full">
+            <TextInput name="email" placeholder="Email" />
+            <TextInput name="name" placeholder="Name" />
+            <TextInput name="message" placeholder="Message" textareaInput />
+
+            <Button title="Send" type="submit" />
+          </Form>
         </Formik>
       </div>
     </div>
