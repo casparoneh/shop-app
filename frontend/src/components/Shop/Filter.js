@@ -126,7 +126,7 @@ const Filter = () => {
       </FilterContainer>
 
       <FilterContainer title="SIZES">
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4 flex-wrap">
           {sizes.map((item, index) => (
             <div
               key={item.id}
@@ -162,7 +162,7 @@ const Filter = () => {
 
       <FilterContainer title="PRICE">
         <div className="flex items-center space-x-2 mt-20">
-          <RangeSlider className="bg-red-500"  />
+          <RangeSlider  />
           {/* https://www.npmjs.com/package/react-range */}
         </div>
       </FilterContainer>

@@ -7,7 +7,7 @@ const FilterContainer = ({ children, title }) => {
         <h1 className="font-bold text-xl">{title}</h1>
         <MdKeyboardArrowUp />
       </div>
-      {children}
+      <div className="flex flex-wrap">{children}</div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const SingleItem = () => {
 
   return (
     <div
-      className=" w-80 bg-gray-100 px-4 rounded-md cursor-pointer"
+      className="max-w-xs   rounded-md cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -25,7 +25,7 @@ const SingleItem = () => {
         )}
       </div>
 
-      <div className="flex justify-between py-4">
+      <div className="flex justify-between p-4">
         <div>
           <h1 className="text-grey-600 text-sm">Dresses</h1>
           <p className="text-lg">Calvin Klein shorts</p>
