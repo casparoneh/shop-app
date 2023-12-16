@@ -10,7 +10,6 @@ const ShopContainer = () => {
       </div>
       {/* right side */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ml-12 justify-items-end w-full ">
-  
         <SingleItem />
         <SingleItem />
         <SingleItem />
@@ -18,7 +17,6 @@ const ShopContainer = () => {
         <SingleItem />
         <SingleItem />
         <SingleItem />
-
       </div>
     </div>
   );

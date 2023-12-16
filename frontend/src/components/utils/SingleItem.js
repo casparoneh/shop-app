@@ -6,18 +6,16 @@ const SingleItem = () => {
 
   return (
     <div
-      className="max-w-xs   rounded-md cursor-pointer"
+      className="max-w-xs rounded-md cursor-pointer relative" // Set relative positioning
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative">
-        <img src="./person.jpg" alt="person" className="h-96 w-full " />
+        <img src="./person.jpg" alt="person" className="h-96 w-full" />
         {isHovered && (
           <button
-            className={`absolute bg-white w-full text-black py-2 transition ease-in-out delay-5000  ${
-              isHovered
-                ? "translate-y-0 bottom-6 "
-                : "-translate-y-full"
+            className={`absolute bg-white text-black py-2 transition ease-in-out delay-5000 ${
+              isHovered ? "bottom-6 left-1/2 transform -translate-x-1/2 w-4/5" : "-translate-y-full"
             }`}
           >
             Add to Cart

@@ -105,6 +105,8 @@ const Filter = () => {
           {colors.map((item, index) => {
             return (
               <div
+              key={item.id}
+
                 className={`${
                   selectedColors.includes(item.id) &&
                   "border-2 rounded-full border-black"
