@@ -63,7 +63,7 @@ const Footer = () => {
               <Link href="/blog" className="text-lg">
                 About
               </Link>
-              <Link href="/blog" className="text-lg">
+              <Link href="/faq" className="text-lg">
                 QA
               </Link>
               <Link href="/termsandconditions" className="text-lg">
