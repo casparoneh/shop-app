@@ -12,7 +12,7 @@ const ChangePassword = () => {
     newPassword: "",
   };
 
-  const MessageValidation = Yup.object({
+  const ChangePasswordValidation = Yup.object({
     oldPassword: Yup.string()
       .required("Old Password is required")
       .min(
@@ -41,7 +41,7 @@ const ChangePassword = () => {
       <MenuContainer>
         <Formik
           initialValues={globalValues}
-          validationSchema={MessageValidation}
+          validationSchema={ChangePasswordValidation}
           onSubmit={onSubmit}
           enableReinitialize
         >
