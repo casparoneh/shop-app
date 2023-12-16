@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const MenuContainer = ({ children }) => {
   return (
-    <div className="container mx-auto flex flex-col md:flex-row justify-between w-full py-20">
+    <div className="container px-4 md:px-0 mx-auto flex flex-col md:flex-row justify-between w-full py-20">
       {/* LEFT SIDE */}
       <div className="w-full md:w-1/3 mb-4 md:mb-0">
         <h1 className="text-3xl font-black">MENU CONTAINER</h1>

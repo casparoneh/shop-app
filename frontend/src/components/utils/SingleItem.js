@@ -1,7 +1,8 @@
 import { FaRegHeart } from "react-icons/fa";
 import { useState } from "react";
+import { IoCloseSharp } from "react-icons/io5";
 
-const SingleItem = () => {
+const SingleItem = ({ img, fromFavorite }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -11,11 +12,19 @@ const SingleItem = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative">
-        <img src="./person.jpg" alt="person" className="h-96 w-full" />
+        {fromFavorite && isHovered && (
+          <div className="absolute top-4 right-4 p-4 bg-white rounded-lg">
+            <IoCloseSharp size={20} />
+          </div>
+        )}
+
+        <img src={img} alt="person" className="h-96 w-full" />
         {isHovered && (
           <button
             className={`absolute bg-white text-black py-2 transition ease-in-out delay-5000 ${
-              isHovered ? "bottom-6 left-1/2 transform -translate-x-1/2 w-4/5" : "-translate-y-full"
+              isHovered
+                ? "bottom-6 left-1/2 transform -translate-x-1/2 w-4/5"
+                : "-translate-y-full"
             }`}
           >
             Add to Cart
