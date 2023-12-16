@@ -69,7 +69,7 @@ const Footer = () => {
               <Link href="/blog" className="text-lg">
                 Terms and Conditions
               </Link>
-              <Link href="/blog" className="text-lg">
+              <Link href="/privacypolicy" className="text-lg">
                 Privacy Policy
               </Link>
             </div>
