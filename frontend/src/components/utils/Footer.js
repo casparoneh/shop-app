@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="space-y-4 md:justify-self-center">
-            <h1 className="font-bold text-2xl">SHOP</h1>
+            <h1 className="font-bold text-2xl">Shop</h1>
 
             <div className="flex flex-col gap-4 mt-4">
               <Link href="/" className="text-lg">
