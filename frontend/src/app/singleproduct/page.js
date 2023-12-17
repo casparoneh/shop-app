@@ -8,6 +8,7 @@ import { CiShare2 } from "react-icons/ci";
 
 const SingleProduct = () => {
   const [selectedColors, setSelectedColors] = useState([]);
+  const [activeData, setActiveData] = useState("description");
 
   const toggleColor = (colorId) => {
     if (selectedColors.includes(colorId)) {
@@ -171,9 +172,100 @@ const SingleProduct = () => {
         </div>
       </div>
 
-
       {/* DESCRIPTION DATA */}
 
+      <div className="my-20 max-w-4xl mx-auto">
+        <div className="flex items-center justify-center gap-6">
+          <span
+            onClick={() => setActiveData("description")}
+            className="text-xl font-semibold cursor-pointer"
+          >
+            DESCRIPTION
+          </span>
+          <span
+            onClick={() => setActiveData("additionalinformation")}
+            className="text-xl font-semibold cursor-pointer"
+          >
+            ADDITIONAL INFORMATION
+          </span>
+          <span
+            onClick={() => setActiveData("reviews")}
+            className="text-xl font-semibold cursor-pointer"
+          >
+            REVIEWS
+          </span>
+        </div>
+
+        <div className="mt-8">
+          {/*DESCRIPTION  */}
+          {activeData == "description" && (
+            <>
+              <h1 className="text-lg font-semibold">
+                Sed do eiusmod tempor incididunt ut labore
+              </h1>
+              <p className="text-sm text-gray-600 my-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et quasi architecto beatae
+                vitae dicta sunt explicabo.
+              </p>
+
+              <h1 className="text-lg font-semibold my-4">
+                Sed do eiusmod tempor incididunt ut labore
+              </h1>
+
+              <ul className="list-disc pl-4 my-4">
+                <li>Creat by cotton fibric with soft and smooth</li>
+                <li>Simple, Configurable (e.g. size, color, etc.), bundled</li>
+                <li>Downloadable/Digital Products, Virtual Products</li>
+              </ul>
+            </>
+          )}
+
+          {activeData == "additionalinformation" && (
+            <div className="flex flex-col gap-6">
+              <div className="w-full  flex">
+                <span className="text-sm font-semibold w-1/6">Weight</span>
+                <span className="text-gray-600 text-sm w-5/6">1.25 kg</span>
+              </div>
+              <div className="w-full  flex">
+                <span className="text-sm font-semibold w-1/6">Dimensions</span>
+                <span className="text-gray-600 text-sm w-5/6">
+                  90 x 60 x 90 cm
+                </span>
+              </div>
+              <div className="w-full  flex">
+                <span className="text-sm font-semibold w-1/6">Size</span>
+                <span className="text-gray-600 text-sm w-5/6">
+                  XS, S, M, L, XL
+                </span>
+              </div>
+              <div className="w-full  flex">
+                <span className="text-sm font-semibold w-1/6">Color</span>
+                <span className="text-gray-600 text-sm w-5/6">
+                  {" "}
+                  Black, Orange, White
+                </span>
+              </div>
+              <div className="w-full  flex">
+                <span className="text-sm font-semibold w-1/6">Storage</span>
+                <span className="text-gray-600 text-sm w-5/6">
+                  Relaxed fit shirt-style dress with a rugged
+                </span>
+              </div>
+            </div>
+          )}
+
+          {activeData == "review" && <></>}
+        </div>
+      </div>
     </div>
   );
 };
