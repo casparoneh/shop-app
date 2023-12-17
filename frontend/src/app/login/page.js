@@ -33,27 +33,30 @@ const Login = () => {
   };
 
   return (
-    <div className="px-4 max-w-lg mx-auto flex flex-col items-center  h-screen  justify-center">
-       
-      <h1 className="font-black text-2xl">LOGIN</h1>
-      <div className="w-full">
-        <Formik
-          initialValues={globalValues}
-          validationSchema={LoginSchema}
-          onSubmit={onSubmit}
-          enableReinitialize
-        >
-          {(formik) => {
-            return (
-              <Form className="w-full">
-                <TextInput name="email" placeholder="Email" />
-                <TextInput name="password" placeholder="Password" type="password" />
-                <Button title="Login" type="submit" />
-              </Form>
-            );
-          }}
-        </Formik>
-      </div>
+    <div className="px-4 max-w-lg mx-auto flex flex-col items-center   justify-center h-full">
+        <h1 className="font-black text-2xl">LOGIN</h1>
+        <div className="w-full">
+          <Formik
+            initialValues={globalValues}
+            validationSchema={LoginSchema}
+            onSubmit={onSubmit}
+            enableReinitialize
+          >
+            {(formik) => {
+              return (
+                <Form className="w-full">
+                  <TextInput name="email" placeholder="Email" />
+                  <TextInput
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                  />
+                  <Button title="Login" type="submit" />
+                </Form>
+              );
+            }}
+          </Formik>
+        </div>
     </div>
   );
 };
