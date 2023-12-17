@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
     lastname: {
       type: String,
     },
- 
+
     phoneNumber: {
       type: String,
     },
