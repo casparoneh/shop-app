@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaRegStar } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { CiShare2 } from "react-icons/ci";
+import Reviews from "@/components/utils/Reviews";
 
 const SingleProduct = () => {
   const [selectedColors, setSelectedColors] = useState([]);
@@ -263,7 +264,7 @@ const SingleProduct = () => {
             </div>
           )}
 
-          {activeData == "review" && <></>}
+          {activeData == "reviews" && <><Reviews /> </>}
         </div>
       </div>
     </div>
