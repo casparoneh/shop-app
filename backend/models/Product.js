@@ -15,7 +15,7 @@ const productSchema = new mongoose.Schema(
           },
           rating: {
             type: Number,
-            required: true,
+            // required: true,
           },
           comment: String,
         },
@@ -69,4 +69,5 @@ const productSchema = new mongoose.Schema(
 
 const Product = mongoose.model("Product", productSchema);
 
-module.exports = Product;
+export default Product;
+
