@@ -12,9 +12,12 @@ const userSlice = createSlice({
     loadgetUsers: (state, action) => {
       state.userList = action.payload;
     },
+    deleteUserAndRefresh: (state, action) => {
+      state.userList = state.userList.filter(user => user._id !== action.payload);
+    }, 
   },
 });
 
-export const { loadgetUsers } = userSlice.actions;
+export const { loadgetUsers,deleteUserAndRefresh } = userSlice.actions;
 
 export default userSlice.reducer;

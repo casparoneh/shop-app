@@ -1,4 +1,4 @@
-const CustomTable = ({ headings, itemsData, from }) => {
+const CustomTable = ({ headings, itemsData, from,deleteItem }) => {
   return (
     <div className="w-full overflow-x-auto">
       <table className="w-full border-collapse border border-slate-400">
@@ -22,8 +22,15 @@ const CustomTable = ({ headings, itemsData, from }) => {
                 <td className="py-6 pl-4">{item.phoneNumber}</td>
                 <td className="py-6 pl-4">{item.address}</td>
 
-                <td className="px-8 rounded-lg py-4 text-center bg-black text-white w-1/2 flex items-center justify-center m-4">
-                  VIEW
+                <td colSpan="2" style={{ textAlign: "end" }}>
+                  <div>
+                    <span className="cursor-pointer px-8 rounded-lg py-4 text-center bg-black text-white m-4 inline-block">
+                      Edit
+                    </span>
+                    <span onClick={() => deleteItem(item._id)} className="cursor-pointer px-8 rounded-lg py-4 text-center bg-black text-white m-4 inline-block">
+                      Delete
+                    </span>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -40,8 +47,6 @@ const CustomTable = ({ headings, itemsData, from }) => {
                 </td>
               </tr>
             ))}
-
-       
         </tbody>
       </table>
     </div>
