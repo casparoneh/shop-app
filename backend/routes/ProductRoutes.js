@@ -1,6 +1,8 @@
 import express from "express";
 import {
-    createProduct
+    createProduct,
+    getProducts,
+    deleteProduct
 } from "../controllers/ProductController.js";
 import { verifyToken } from "../utils/verifyUser.js";
 
@@ -8,6 +10,9 @@ const router = express.Router();
 
 
 router.post("/create",createProduct);
+router.get("/getProducts",getProducts)
+router.delete("/delete/:id",deleteProduct);
+
 
 // router.post("/create",createUser)
 // router.get("/getUsers", getUsers);

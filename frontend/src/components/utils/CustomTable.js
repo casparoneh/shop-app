@@ -35,6 +35,28 @@ const CustomTable = ({ headings, itemsData, from,deleteItem }) => {
               </tr>
             ))}
 
+{from == "products" &&
+            itemsData?.map((item, index) => (
+              <tr key={index}>
+                <td className="py-6 pl-4">{item.title}</td>
+                <td className="py-6 pl-4">{item.price}</td>
+                <td className="py-6 pl-4">{item.color}</td>
+                <td className="py-6 pl-4">{item.size}</td>
+                <td className="py-6 pl-4">{item.storage}</td>
+
+                <td colSpan="2" style={{ textAlign: "end" }}>
+                  <div>
+                    <span className="cursor-pointer px-8 rounded-lg py-4 text-center bg-black text-white m-4 inline-block">
+                      Edit
+                    </span>
+                    <span onClick={() => deleteItem(item._id)} className="cursor-pointer px-8 rounded-lg py-4 text-center bg-black text-white m-4 inline-block">
+                      Delete
+                    </span>
+                  </div>
+                </td>
+              </tr>
+            ))}
+
           {from == "orders" &&
             itemsData?.map((item, index) => (
               <tr key={index}>
