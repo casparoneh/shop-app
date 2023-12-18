@@ -26,18 +26,17 @@ export const getProducts = async (req, res) => {
 };
 
 export const deleteProduct = async (req, res) => {
-    try {
-      const { id } = req.params;
-  
-      const user = await Product.findByIdAndDelete({ _id: id });
-  
-      if (!user) {
-        return res.json({ error: "Product not found" });
-      }
-  
-      return res.status(200).json(user);
-    } catch (error) {
-      console.log(error);
+  try {
+    const { id } = req.params;
+
+    const user = await Product.findByIdAndDelete({ _id: id });
+
+    if (!user) {
+      return res.json({ error: "Product not found" });
     }
-  };
-  
+
+    return res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+  }
+};
