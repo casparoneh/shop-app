@@ -41,7 +41,7 @@ const Orders = () => {
   return (
     <div>
       <MenuContainer>
-        <CustomTable headings={headings} itemsData={itemsData} />
+        <CustomTable headings={headings} itemsData={itemsData} from="orders" />
       </MenuContainer>
     </div>
   );

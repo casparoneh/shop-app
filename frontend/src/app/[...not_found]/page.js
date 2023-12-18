@@ -9,7 +9,7 @@ const ErrorPage = () => {
 
 
   return (
-    <div className="flex flex-col justify-center items-center h-full max-w-sm mx-auto">
+    <div className="flex flex-col justify-center items-center h-full max-w-sm mx-auto px-4 py-20 ">
       <h1 className="text-8xl font-bold">OPPS!</h1>
       <h2 className="font-bold text-2xl my-8">Page not found</h2>
       <p className="text-sm text-gray-600 mb-8">
