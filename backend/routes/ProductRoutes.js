@@ -2,7 +2,8 @@ import express from "express";
 import {
     createProduct,
     getProducts,
-    deleteProduct
+    deleteProduct,
+    getRelatedProducts
 } from "../controllers/ProductController.js";
 import { verifyToken } from "../utils/verifyUser.js";
 
@@ -12,7 +13,7 @@ const router = express.Router();
 router.post("/create",createProduct);
 router.get("/getProducts",getProducts)
 router.delete("/delete/:id",deleteProduct);
-
+router.get("/related-products/:productId", getRelatedProducts)
 
 // router.post("/create",createUser)
 // router.get("/getUsers", getUsers);

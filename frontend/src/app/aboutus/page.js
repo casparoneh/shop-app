@@ -7,7 +7,7 @@ const AboutUs = () => {
     <div className="container mx-auto py-14 px-4 md:px-0">
       <img src="./shop.webp" alt="" className="w-full h-96 object-cover" />
 
-      <div className="max-w-2xl  mx-auto py-8">
+      <div className="max-w-3xl  mx-auto py-8">
         <h1 className="text-2xl font-bold">OUR STORY</h1>
         <p className="text-sm font-bold py-6 text-gray-600 text-justify">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
@@ -58,22 +58,31 @@ const AboutUs = () => {
           </div>
         </div>
 
-        
         <div className="flex gap-6 text-center   md:justify-center flex-col py-8 md:flex-row">
           <div className="flex flex-col items-center">
             <MdDeliveryDining size={60} />
-            <h1 className="font-semibold text-lg my-4">FAST AND FREE DELIVERY</h1>
-            <p className="text-gray-600 text-sm">Free delivery for all orders over $140</p>
+            <h1 className="font-semibold text-lg my-4">
+              FAST AND FREE DELIVERY
+            </h1>
+            <p className="text-gray-600 text-sm">
+              Free delivery for all orders over $140
+            </p>
           </div>
           <div className="flex flex-col items-center">
-            <MdOutlineSupportAgent  size={60} />
-            <h1 className="font-semibold text-lg my-4">FAST AND FREE DELIVERY</h1>
-            <p className="text-gray-600 text-sm">Free delivery for all orders over $140</p>
+            <MdOutlineSupportAgent size={60} />
+            <h1 className="font-semibold text-lg my-4">
+              24/7 CUSTOMER SUPPORT
+            </h1>
+            <p className="text-gray-600 text-sm">
+              Friendly 24/7 customer support
+            </p>
           </div>
           <div className="flex flex-col items-center">
             <GiMoneyStack size={60} />
-            <h1 className="font-semibold text-lg my-4">FAST AND FREE DELIVERY</h1>
-            <p className="text-gray-600 text-sm">Free delivery for all orders over $140</p>
+            <h1 className="font-semibold text-lg my-4">MONEY BACK GUARANTEE</h1>
+            <p className="text-gray-600 text-sm">
+              We return money within 30 days
+            </p>
           </div>
         </div>
       </div>
