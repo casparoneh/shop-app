@@ -2,21 +2,27 @@
 
 import Button from "@/components/utils/Button";
 import TextInput from "@/components/utils/TextInput";
+import axios from "axios";
 import { Form, Formik } from "formik";
+import { useState } from "react";
 import * as Yup from "yup";
 
-const Login = () => {
+const Register = () => {
+
+  const [error, setError] = useState(false);
+
+
   const globalValues = {
-    name: "",
-    lastname: "",
+    // name: "",
+    // lastname: "",
     email: "",
     password: "",
     confirmPassword: "",
   };
 
-  const LoginSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
-    lastname: Yup.string().required("Lastname is required"),
+  const RegisterSchema = Yup.object({
+    // name: Yup.string().required("Name is required"),
+    // lastname: Yup.string().required("Lastname is required"),
     email: Yup.string()
       .email("Invalid email format")
       .required("Email is required"),
@@ -33,10 +39,17 @@ const Login = () => {
 
   const onSubmit = async (values, onSubmitProps) => {
     try {
-      console.log("asd");
-      onSubmitProps.resetForm();
+
+      await axios.post(`${process.env.NEXT_PUBLIC_URL}/auth/signup`, {
+        email: values.email,
+        password: values.password,
+      });
+
+    
+        onSubmitProps.resetForm();
+    
     } catch (error) {
-      console.log("Error:", error);
+      console.log(error);
     }
   };
 
@@ -46,7 +59,7 @@ const Login = () => {
       <div className="w-full">
         <Formik
           initialValues={globalValues}
-          validationSchema={LoginSchema}
+          validationSchema={RegisterSchema}
           onSubmit={onSubmit}
           enableReinitialize
         >
@@ -54,8 +67,8 @@ const Login = () => {
             return (
               <Form className="w-full">
                 <TextInput name="email" placeholder="Email" />
-                <TextInput name="name" placeholder="Name" />
-                <TextInput name="lastname" placeholder="Lastname" />
+                {/* <TextInput name="name" placeholder="Name" />
+                <TextInput name="lastname" placeholder="Lastname" /> */}
                 <TextInput
                   name="password"
                   placeholder="Password"
@@ -75,4 +88,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login;
+export default Register;

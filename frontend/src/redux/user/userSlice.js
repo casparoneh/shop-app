@@ -9,6 +9,9 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    signInSuccess: (state, action) => {
+      state.currentUser = action.payload;
+    },
     loadgetUsers: (state, action) => {
       state.userList = action.payload;
     },
@@ -20,6 +23,6 @@ const userSlice = createSlice({
   },
 });
 
-export const { loadgetUsers, deleteUserAndRefresh } = userSlice.actions;
+export const { loadgetUsers, deleteUserAndRefresh,signInSuccess } = userSlice.actions;
 
 export default userSlice.reducer;
