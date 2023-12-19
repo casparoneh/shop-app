@@ -3,6 +3,7 @@ import {
   getUsers,
   getSingleUser,
   deleteUser,
+  updateUser
 } from "../controllers/UserController.js";
 import { verifyToken } from "../utils/verifyUser.js";
 
@@ -12,6 +13,7 @@ const router = express.Router();
 router.get("/getUsers", getUsers);
 router.get("/:id", getSingleUser);
 router.delete("/delete/:id", deleteUser);
+router.post("/update/:id",verifyToken , updateUser)
 
 // router.post("/update/:id", verifyToken, updateUser);
 // router.post("/favorites/add", addFavorite);
