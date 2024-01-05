@@ -2,6 +2,7 @@ import User from "../models/UserModel.js";
 import bcrypt from "bcryptjs";
 import { errorHandler } from "../utils/error.js";
 import jwt from "jsonwebtoken";
+import crypto from "crypto";
 
 export const signup = async (req, res) => {
   try {
@@ -19,7 +20,7 @@ export const signup = async (req, res) => {
   }
 };
 
-export const signin = async (req, res,next) => {
+export const signin = async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
@@ -36,32 +37,31 @@ export const signin = async (req, res,next) => {
     }
 
     const token = jwt.sign(
-      {
-        id: validUser._id,
-      },
-      process.env.JWT_SECRET
+      { id: validUser._id },
+      process.env.JWT_SECRET,
+      { expiresIn: "24h" } // Adjust the expiration time as needed
     );
 
     const { password: pass, ...userInfo } = validUser._doc;
 
+    console.log("token", token);
+
+
     res
-      .cookie("access_token", token, {
-        httpOnly: true,
-        expires: new Date(Date.now() + 24 * 60 * 60 * 1000),
-      })
+     
       .status(200)
-      .json(userInfo);
+      .json({token ,userInfo});
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    return next(errorHandler(500, "Internal Server Error"));
   }
 };
 
-
-export const signout = async (req,res,next) => {
+export const signout = async (req, res, next) => {
   try {
     res.clearCookie("access_token");
     res.status(200).json("User has been logged out");
   } catch (error) {
-     next(error)
+    next(error);
   }
-}
+};

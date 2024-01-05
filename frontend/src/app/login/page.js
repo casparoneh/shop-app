@@ -5,7 +5,7 @@ import TextInput from "@/components/utils/TextInput";
 import { Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import { signInSuccess } from "@/redux/user/userSlice";
+import { signInSuccess,addToken } from "@/redux/user/userSlice";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useState } from "react";
@@ -18,8 +18,8 @@ const Login = () => {
   const router = useRouter();
 
   const globalValues = {
-    email: "",
-    password: "",
+    email: "lorik@hotmail.com",
+    password: "Qwerty1244!",
   };
 
   const LoginSchema = Yup.object({
@@ -35,6 +35,8 @@ const Login = () => {
   });
 
   const onSubmit = async (values, onSubmitProps) => {
+
+
     try {
       await axios
         .post(`${process.env.NEXT_PUBLIC_URL}/auth/signin`, {
@@ -43,13 +45,18 @@ const Login = () => {
         })
         .then((res) => {
           onSubmitProps.resetForm();
-          dispatch(signInSuccess(res));
+          dispatch(signInSuccess(res.data.userInfo));
           router.push("/contact");
           setError("");
+          const { token } = res.data;
+
+          localStorage.setItem('token', token);
+          dispatch(addToken(token));
+
         });
     } catch (error) {
       console.log("Error:", error);
-      setError(error.response?.data?.message || "An error occurred");
+      setError(error?.response?.data?.message || "An error occurred");
     }
   };
 

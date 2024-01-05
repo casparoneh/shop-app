@@ -1,12 +1,10 @@
-"use client"
+"use client";
 
 import Button from "@/components/utils/Button";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 const ErrorPage = () => {
-
-  const router = useRouter()
-
+  const router = useRouter();
 
   return (
     <div className="flex flex-col justify-center items-center h-full max-w-sm mx-auto px-4 py-20 ">
@@ -16,7 +14,7 @@ const ErrorPage = () => {
         Sorry, we couldn't find the page you where looking for. We suggest that
         you return to home page.
       </p>
-      <Button title="GO TO HOMEPAGE" onClick={() => router.push('/')} />
+      <Button title="GO TO HOMEPAGE" onClick={() => router.push("/")} />
     </div>
   );
 };

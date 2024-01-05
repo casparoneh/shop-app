@@ -20,6 +20,15 @@ const userSchema = new mongoose.Schema(
     phoneNumber: {
       type: String,
     },
+    postalCode: {
+      type: Number,
+    },
+    number: {
+      type: Number,
+    },
+    city: {
+      type: String,
+    },
     avatar: {
       type: String,
       default:
