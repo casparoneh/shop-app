@@ -3,7 +3,8 @@ import {
   getUsers,
   getSingleUser,
   deleteUser,
-  updateUser
+  updateUser,
+  changePassword
 } from "../controllers/UserController.js";
 import { verifyToken } from "../utils/verifyUser.js";
 
@@ -14,6 +15,7 @@ router.get("/getUsers", getUsers);
 router.get("/:id", getSingleUser);
 router.delete("/delete/:id", deleteUser);
 router.post("/update/:id" , updateUser)
+router.post("/change-password/:id" , changePassword)
 
 // router.post("/update/:id", verifyToken, updateUser);
 // router.post("/favorites/add", addFavorite);

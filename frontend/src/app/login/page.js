@@ -18,8 +18,8 @@ const Login = () => {
   const router = useRouter();
 
   const globalValues = {
-    email: "lorik@hotmail.com",
-    password: "Qwerty1244!",
+    email: "",
+    password: "",
   };
 
   const LoginSchema = Yup.object({

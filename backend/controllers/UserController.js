@@ -41,12 +41,7 @@ export const deleteUser = async (req, res) => {
   }
 };
 
-
 export const updateUser = async (req, res, next) => {
-
-
-
-
   try {
     if (req.body.password) {
       req.body.password = bcryptjs.hashSync(req.body.password, 10);
@@ -69,7 +64,7 @@ export const updateUser = async (req, res, next) => {
           avatar: req.body.avatar,
           postalCode: req.body.postalCode,
           number: req.body.number,
-          city: req.body.city
+          city: req.body.city,
         },
       },
       { new: true }
@@ -82,6 +77,39 @@ export const updateUser = async (req, res, next) => {
     res.status(200).json(rest);
   } catch (error) {
     console.error("Error updating user:", error);
+    next(error);
+  }
+};
+
+export const changePassword = async (req, res, next) => {
+  try {
+    // Retrieve the user by ID
+    const user = await User.findById(req.params.id);
+
+    // Check if the provided old password matches the current password
+    const isPasswordValid = await bcryptjs.compare(
+      req.body.oldPassword,
+      user.password
+    );
+
+    if (!isPasswordValid) {
+      return res.status(400).json({ error: "Old password is incorrect" });
+    }
+
+    // Hash and update the new password
+    const newPasswordHash = bcryptjs.hashSync(req.body.newPassword, 10);
+    user.password = newPasswordHash;
+
+    // Save the updated user
+    const updatedUser = await user.save();
+
+    const { password, ...rest } = updatedUser._doc;
+
+    console.log("Updated user password:", rest); // Log the updated user details
+
+    res.status(200).json(rest);
+  } catch (error) {
+    console.error("Error changing password:", error);
     next(error);
   }
 };
